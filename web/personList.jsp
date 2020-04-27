@@ -19,7 +19,7 @@
   
  
 
-        <c:forEach items="${sessionScope.listaStudentow}" var="Student">
+  <c:forEach items="${sessionScope.listaStudentow}" var="Student">
   <tr>
     <td>${Student.firstName}</td>
     <td>${Student.lastName}</td>
