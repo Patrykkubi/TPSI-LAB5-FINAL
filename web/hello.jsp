@@ -16,8 +16,7 @@
         <!-- W c:out wartosc zostanie odczytana jako ciag znakow -->
         
         <h1>Witaj, ${p1.firstName} ${p1.lastName}!</h1>
-        <a href="mailto:${p1.email}">${p1.email}</a>
-        <h1>Wyswietlenia strony:${sessionScope.counter} </h1>
+        <a href="mailto:${p1.email}">${p1.email}</a>       
         <!--Tutaj wyrazenie zostanie wykonane jako kod html lub js -->
         
         <c:forEach items="${dniTygodnia}" var="dzien">

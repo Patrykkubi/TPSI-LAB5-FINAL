@@ -18,8 +18,20 @@ public class PersonListServlet extends HttpServlet {
      
      protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-         
-
+       
+         HttpSession session = request.getSession(); 
+        
+         Integer counter = (Integer) session.getAttribute("counter");
+        
+        if(counter==null || counter==0){
+            counter=1;
+        }
+        else
+        {
+        counter++;
+        }
+        
+        session.setAttribute("counter",counter);
          request.getRequestDispatcher("personList.jsp").forward(request, response);
          
     }
@@ -27,8 +39,19 @@ public class PersonListServlet extends HttpServlet {
      protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
          
-         HttpSession session = request.getSession();         
+         HttpSession session = request.getSession();  
+         Integer counter = (Integer) session.getAttribute("counter");
          
+        if(counter==null || counter==0){
+            counter=1;
+        }
+        else
+        {
+        counter++;
+        }
+          session.setAttribute("counter",counter);
+          
+          
          if (session.getAttribute("listaStudentow")==null){
              List<Student> studenci= new ArrayList<>();
              session.setAttribute("listaStudentow",studenci);

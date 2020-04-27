@@ -40,5 +40,6 @@
          
          
         </form>
+          <h1>Wyswietlenia strony:${sessionScope.counter} </h1>
     </body>
 </html>

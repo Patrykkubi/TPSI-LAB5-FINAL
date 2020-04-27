@@ -24,17 +24,7 @@ public class HelloServlet extends HttpServlet {
         Person p1 = new Person(request.getParameter("firstName"),request.getParameter("lastName"),request.getParameter("email"));
 
         HttpSession session = request.getSession();   
-        Integer counter = (Integer) session.getAttribute("counter");
         
-        if(counter==null || counter==0){
-            counter=1;
-        }
-        else
-        {
-        counter++;
-        }
-        
-        session.setAttribute("counter",counter);
         
         List<String> dni = new ArrayList<>();
         dni.add("Poniedziałek");
